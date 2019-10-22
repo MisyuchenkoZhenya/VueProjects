@@ -5,17 +5,32 @@
 </template>
 
 <script>
-import Ticket from "./Ticket.vue"
+import Ticket from "./Ticket.vue";
+import ticketSet from "../../data/tickets";
+import ticketTypeSet from "../../data/ticketTypes";
 
 export default {
     data() {
         return {
-            tickets: [],//this.$store.getters.stocks,
+            tickets: [],
         };
     },
     components: {
         appTicket: Ticket
     },
+
+    created: function () {
+        ticketSet.forEach((ticket)=>{
+            if(ticket.columnId == this.columnId) {
+                ticket.type = ticketTypeSet.find(el=>el.id == ticket.typeId);
+                this.tickets.push(ticket);
+            }
+        });
+    },
+
+    props: [
+        'columnId'
+    ]
 }
 </script>
 

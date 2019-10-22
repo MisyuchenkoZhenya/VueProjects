@@ -3,7 +3,9 @@
         <div class="column__header">
             {{this.column.title}}
         </div>
-        
+        <div class="column__body">
+            <app-tickets :columnId="this.column.id"></app-tickets>
+        </div>
   </div>
 </template>
 
@@ -34,8 +36,9 @@ export default {
     padding: 5px 5px;
     width: 300px;
     height: auto;
-    background-color: #eaeafa;
-    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solip #aaaaaa;
+    border-radius: 5px;
 }
 
 .column__header {
