@@ -28,8 +28,8 @@ export default {
     width: auto;
     height: 100%;
     padding: 20px 15px;
-
-    background-color: rgb(160, 105, 98)
+    flex: 1 1 auto;
+    /* background-color: rgb(160, 105, 98) */
 }
 
 /* Scrollbar */

@@ -1,6 +1,6 @@
 <template>
     <div class="ticket__body" >
-        <div class="card mb-3" :style="this.borderColor">
+        <div class="card mb-3 mt-3" :style="this.borderColor">
             <div class="card-header" :style="this.headerColor" :title="this.ticket.title">{{this.ticket.title}}</div>
             <div class="card-body text-dark">
                 <p class="card-text">{{this.ticket.description}}</p>

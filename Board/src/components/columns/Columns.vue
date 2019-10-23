@@ -23,5 +23,6 @@ export default {
 <style>
 .board-columns {
     display: flex;
+    height: inherit;
 }
 </style>

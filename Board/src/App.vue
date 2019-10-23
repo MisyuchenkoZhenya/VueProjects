@@ -45,9 +45,11 @@ export default {
 <style lang="scss">
 .app-body {
   position: absolute;
+  display: flex;
+  flex-flow: column;
   width: 100%;
   height: 100%;
-  // background-image: url("./assets/background.jpg");
+  background-image: url("./assets/background.jpg");
   background-repeat: repeat;
 }
 </style>

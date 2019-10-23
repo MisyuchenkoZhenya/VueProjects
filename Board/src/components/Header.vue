@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style>
+.header {
+    flex: 0 1 auto;
+}
 /* .header{
     position: relative;
     padding: 5px 30px;

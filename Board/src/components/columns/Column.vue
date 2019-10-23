@@ -33,11 +33,11 @@ export default {
 .board-column {
     position: relative;
     margin: 0 15px;
-    padding: 5px 5px;
-    width: 300px;
+    padding: 5px 10px;
+    width: 340px;
     height: auto;
     background-color: #ffffff;
-    border: 1px solip #aaaaaa;
+    border: 1px solid #aaaaaa;
     border-radius: 5px;
 }
 
