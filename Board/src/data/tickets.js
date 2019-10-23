@@ -10,7 +10,7 @@ export default [
     {
         id: 2,
         columnId: 1,
-        typeId: 1,
+        typeId: 3,
         title: "Test 2",
         description: "Qwerty",
         rank: 2,
@@ -26,7 +26,7 @@ export default [
     {
         id: 4,
         columnId: 2,
-        typeId: 1,
+        typeId: 2,
         title: "Long description",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         rank: 4,

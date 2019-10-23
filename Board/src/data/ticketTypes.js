@@ -11,4 +11,10 @@ export default [
         borderColor: "#0000aa",
         backgroundColor: "#cfcfff",
     },
+    {
+        id: 3,
+        name: "Investigate",
+        borderColor: "#00aa00",
+        backgroundColor: "#cfffcf",
+    },
 ]

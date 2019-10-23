@@ -1,6 +1,12 @@
 <template>
   <div>
-    <draggable v-model="tickets" group="tickets" :component-data="getComponentData()" class="bigger-area draggable-area">
+    <draggable
+                v-model="tickets"
+                group="tickets"
+                :component-data="getComponentData()"
+                class="bigger-area draggable-area"
+                ghost-class="ghost"
+    >
         <app-ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket"></app-ticket>
     </draggable>
   </div>
@@ -62,5 +68,8 @@ export default {
 <style>
 .draggable-area {
     padding: 15px 0;
+}
+.ghost {
+    opacity: 0.3;
 }
 </style>
