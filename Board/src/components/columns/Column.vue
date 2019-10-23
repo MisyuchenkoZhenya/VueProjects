@@ -1,5 +1,5 @@
 <template>
-  <div class="board-column">
+  <div class="board-column ml-3 mr-3">
         <div class="column__header">
             {{this.column.title}}
         </div>
@@ -32,10 +32,9 @@ export default {
 <style>
 .board-column {
     position: relative;
-    margin: 0 15px;
     padding: 5px 10px;
     width: 340px;
-    height: auto;
+    margin-bottom: auto;
     background-color: #ffffff;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
@@ -44,7 +43,5 @@ export default {
 .column__header {
     height: 30px;
     border-bottom: 1px solid;
-    /* box-shadow: 0px 3px 5px #000000; */
-
 }
 </style>

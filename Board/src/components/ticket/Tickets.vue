@@ -1,6 +1,8 @@
 <template>
   <div>
-    <app-ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket"></app-ticket>
+    <draggable v-model="tickets" group="tickets" :component-data="getComponentData()" class="bigger-area draggable-area">
+        <app-ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket"></app-ticket>
+    </draggable>
   </div>
 </template>
 
@@ -9,14 +11,37 @@ import Ticket from "./Ticket.vue";
 import ticketSet from "../../data/tickets";
 import ticketTypeSet from "../../data/ticketTypes";
 
+import draggable from "vuedraggable";
+
 export default {
     data() {
         return {
             tickets: [],
         };
     },
+
     components: {
-        appTicket: Ticket
+        appTicket: Ticket,
+        draggable,
+    },
+
+    methods: {
+        handleChange() {
+
+        },
+        getComponentData() {
+            return {
+                on: {
+                    change: this.handleChange,
+                },
+                attrs:{
+                    wrap: true
+                },
+                props: {
+
+                }
+            };
+        }
     },
 
     created: function () {
@@ -35,5 +60,7 @@ export default {
 </script>
 
 <style>
-
+.draggable-area {
+    padding: 15px 0;
+}
 </style>

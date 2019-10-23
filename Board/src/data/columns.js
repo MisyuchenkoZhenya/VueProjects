@@ -5,7 +5,7 @@ export default [
     },
     {
         id: 2,
-        title: "Development"
+        title: "In development"
     },
     {
         id: 3,

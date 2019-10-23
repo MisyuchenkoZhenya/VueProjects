@@ -36,13 +36,4 @@ export default {
 .header {
     flex: 0 1 auto;
 }
-/* .header{
-    position: relative;
-    padding: 5px 30px;
-    height: 50px;
-    width: 100%;
-    box-shadow: 0px 2px 3px #000000;
-    background-color: #000000;
-    opacity: 0.6;
-} */
 </style>
