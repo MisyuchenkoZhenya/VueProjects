@@ -7,7 +7,7 @@
                 class="bigger-area draggable-area"
                 ghost-class="ghost"
     >
-        <app-ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket"></app-ticket>
+        <app-ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket" @RemoveTicket="RemoveTicket"></app-ticket>
     </draggable>
   </div>
 </template>
@@ -20,6 +20,11 @@ import ticketTypeSet from "../../data/ticketTypes";
 import draggable from "vuedraggable";
 
 export default {
+
+    props: [
+        'columnId'
+    ],
+
     data() {
         return {
             tickets: [],
@@ -47,7 +52,14 @@ export default {
 
                 }
             };
-        }
+        },
+        RemoveTicket(ticketId) {
+            this.tickets.forEach((el, index)=>{
+                if(el.id === ticketId) {
+                    this.tickets.splice(index,1);
+                }
+            });
+        },
     },
 
     created: function () {
@@ -58,10 +70,6 @@ export default {
             }
         });
     },
-
-    props: [
-        'columnId'
-    ]
 }
 </script>
 
