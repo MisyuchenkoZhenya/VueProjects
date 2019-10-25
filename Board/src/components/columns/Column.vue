@@ -2,6 +2,7 @@
   <div class="board-column ml-3 mr-3">
         <div class="column__header">
             {{this.column.title}}
+            <button type="button" class="btn add-ticket-button" @click="show"></button>
         </div>
         <div class="column__body">
             <app-tickets :columnId="this.column.id"></app-tickets>
@@ -11,21 +12,34 @@
 
 <script>
 import AppTickets from "../ticket/Tickets";
+import ModalTicket from "../ticket/ModalTicket.vue";
 
 export default {
+
+    props: [
+        'column',
+        'tickets',
+    ],
+
+    components: {
+        appTickets: AppTickets,
+        ModalTicket,
+    },
 
     data() {
         return {
 
         }
     },
-    components: {
-        appTickets: AppTickets,
+
+    methods: {
+        show () {
+            this.$modal.show(ModalTicket, {
+                column: this.column,
+            });
+        },
     },
-    props: [
-        'column',
-        'tickets'
-    ]
+
 }
 </script>
 
@@ -41,7 +55,17 @@ export default {
 }
 
 .column__header {
+    display: flex;
+    justify-content: space-between;
     height: 30px;
     border-bottom: 1px solid;
 }
+
+.add-ticket-button {
+    background: url(../../assets/add-icon.png) no-repeat;
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+}
+
 </style>

@@ -1,22 +1,45 @@
 <template>
-  <div class="board-columns board__scroll">
-    <app-column v-for="column in columns" :key="column.id" :column="column"></app-column>
-  </div>
+    <div class="board-columns board__scroll">
+        <app-column v-for="column in columns" :key="column.id" :column="column">
+
+        </app-column>
+        <modal 
+            name="modal-ticket"
+            @before-open="beforeOpen"
+            @before-close="beforeClose"
+        >
+            <modal-ticket></modal-ticket>
+        </modal>
+    </div>
 </template>
 
 <script>
 import Column from "./Column.vue";
 import columnSet from "../../data/columns";
+import ModalTicket from "../ticket/ModalTicket.vue";
 
 export default {
+
     data() {
         return {
             columns: columnSet,//this.$store.getters.stocks,
         };
     },
+
     components: {
-        appColumn: Column
+        appColumn: Column,
+        ModalTicket,
     },
+
+    methods: {
+        beforeOpen (event) {
+            
+        },
+        beforeClose (event) {
+            this.$$updatableTicket = null;
+        }
+    },
+
 }
 </script>
 

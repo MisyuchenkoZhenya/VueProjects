@@ -1,24 +1,25 @@
 <template>
-  <div class="board__body board__scroll">
-      <app-columns>
+    <div class="board__body board__scroll">
+        <app-columns>
 
-      </app-columns>
-  </div>
+        </app-columns>
+    </div>
 </template>
 
 <script>
-import AppColumns from "./columns/Columns"
+import AppColumns from "./columns/Columns";
 
 export default {
+
+    components: {
+        appColumns: AppColumns
+    },
 
     data() {
         return {
             columns: []
         }
     },
-    components: {
-        appColumns: AppColumns
-    }
 }
 </script>
 

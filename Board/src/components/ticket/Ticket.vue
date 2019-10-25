@@ -25,13 +25,17 @@
 </template>
 
 <script>
-
+import ModalTicket from "./ModalTicket.vue";
 
 export default {
 
     props: [
         'ticket'
     ],
+
+    components: {
+        ModalTicket
+    },
 
     data() {
         return {
@@ -42,7 +46,9 @@ export default {
 
     methods: {
         ModifyTicket() {
-            alert(this.ticket.id)
+            this.$modal.show(ModalTicket, {
+                ticket: this.ticket,
+            });
         },
         RemoveTicket() {
             this.$emit("RemoveTicket", this.ticket.id);
@@ -53,6 +59,7 @@ export default {
         this.headerColor = `inset 0px 0px 5px ${this.ticket.type.backgroundColor}`;
         this.borderColor = `1px solid ${this.ticket.type.mainColor}`;
     },
+
 }
 </script>
 

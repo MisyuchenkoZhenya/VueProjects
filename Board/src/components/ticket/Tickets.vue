@@ -25,15 +25,15 @@ export default {
         'columnId'
     ],
 
+    components: {
+        appTicket: Ticket,
+        draggable,
+    },
+
     data() {
         return {
             tickets: [],
         };
-    },
-
-    components: {
-        appTicket: Ticket,
-        draggable,
     },
 
     methods: {
@@ -70,6 +70,7 @@ export default {
             }
         });
     },
+
 }
 </script>
 

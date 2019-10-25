@@ -6,8 +6,4 @@ export default [
         path: '/',
         component: Board
     },
-    {
-        path: '/qwe',
-        component: Board
-    },
 ]
